@@ -1,7 +1,7 @@
 {
   "name": "ifmgapi",
   "version": "1.0.0",
-  "description": "",
+  "description": "Uma API de Web Scraping ao site do IFMG",
   "main": "./src/start.js",
   "type": "module",
   "scripts": {
@@ -9,8 +9,8 @@
     "nodemon": "nodemon ./src/start.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "LearXD <contato@learxd.me>",
+  "license": "MIT",
   "dependencies": {
     "axios": "^1.2.1",
     "body-parser": "^1.20.1",

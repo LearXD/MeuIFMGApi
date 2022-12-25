@@ -28,7 +28,7 @@ api.get('/', middleware, async (req, res, next) => {
             return next(new HttpError("O Token fornecido é inválido ou já expirado!", UNAUTHORIZED))
         }
 
-        console.log((await import('util')).inspect(response.request.socket._httpMessage.path, {showHidden: false, depth: null, colors: true}))
+        //console.log((await import('util')).inspect(response.request.socket._httpMessage.path, {showHidden: false, depth: null, colors: true}))
         //console.log(response.status)
 
         res.status(200).send(extractDataFromHtml(response.data))

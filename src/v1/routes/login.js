@@ -23,7 +23,7 @@ api.post('/', async (req, res, next) => {
 
         let cookies = [];
 
-        const { SERVER_HOST, SERVER_LOGIN_ROUTE } = process.env
+        const { SERVER_HOST, SERVER_LOGIN_ROUTE, SERVER_HISTORIC_ROUTE } = process.env
 
         const loginResponse = await axios({
             url: SERVER_HOST + SERVER_LOGIN_ROUTE,
@@ -60,6 +60,12 @@ api.post('/', async (req, res, next) => {
        }
 
        const cookiesStr = cookiesToString(cookies)
+	   
+	   axios({
+            url: SERVER_HOST + SERVER_HISTORIC_ROUTE,
+            method: 'get',
+            headers: { cookie: cookiesStr },
+        }).catch(err => {});
 
        res.status(200).send({
         token: cookiesStr

@@ -22,6 +22,9 @@ export default (options) => {
     console.log(">>> Registrando V1")
     api.use('/v1', version1);
 
+    api.get('/status', (req, res) => {
+        res.status(200).send({message: 'OK', time: Date.now()})
+    })
 
     api.use((req, res, next) => {
         next(new Error())
