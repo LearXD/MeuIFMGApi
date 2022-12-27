@@ -11,11 +11,11 @@ api.post('/', async (req, res, next) => {
 
     const { registration, password } = req.body;
 
-    if(!registration) {
+    if (!registration) {
         next(new HttpError("Matrícula `registration` de usuário não definida!", BAD_REQUEST))
     }
 
-    if(!password) {
+    if (!password) {
         next(new HttpError("Senha `password` de usuário não definida!", BAD_REQUEST))
     }
 
@@ -38,12 +38,12 @@ api.post('/', async (req, res, next) => {
         })
 
 
-        if(loginResponse.status != 302) {
+        if (loginResponse.status != 302) {
             return next(new HttpError("`Usuário` ou `Senha` de login incorretos ou inexistentes!", UNAUTHORIZED))
         }
-        
 
-        if(loginResponse.headers && loginResponse.headers['set-cookie']) {
+
+        if (loginResponse.headers && loginResponse.headers['set-cookie']) {
             loginResponse.headers['set-cookie'].forEach((cookie) => {
                 cookies = {
                     ...cookies,
@@ -52,24 +52,24 @@ api.post('/', async (req, res, next) => {
             })
         }
 
-       cookies = 
-       {
+        cookies =
+        {
             ...cookies,
             RedirectUrlContexto: "https://meu.ifmg.edu.br:443/EducaMobile/Educacional/EduAluno/EduNotasFaltasEtapa?tp=A",
             EduTipoUser: "A"
-       }
+        }
 
-       const cookiesStr = cookiesToString(cookies)
-	   
-	   axios({
+        const cookiesStr = cookiesToString(cookies)
+
+        axios({
             url: SERVER_HOST + SERVER_HISTORIC_ROUTE,
             method: 'get',
             headers: { cookie: cookiesStr },
-        }).catch(err => {});
+        }).catch(err => { });
 
-       res.status(200).send({
-        token: cookiesStr
-       })
+        res.status(200).send({
+            token: cookiesStr
+        })
 
     } catch (error) {
         next(new HttpError("Erro interno: " + error, INTERNAL_SERVER_ERROR))
