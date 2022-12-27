@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node ./src/start.js",
-    "nodemon": "nodemon ./src/start.js"
+    "nodemon": "nodemon ./src/start.js",
+    "teste": "node ./src/test.js"
   },
   "keywords": [],
   "author": "LearXD <contato@learxd.me>",

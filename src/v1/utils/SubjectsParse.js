@@ -2,16 +2,24 @@ import { JSDOM } from "jsdom";
 
 export const extractDataFromHtml = (html) => {
 
-    //console.log(html)
-    const { document } = (new JSDOM(html)).window;
+    const DOM = (new JSDOM(html, {runScripts: 'outside-only'}))
+    const { document } = DOM.window;
 
     let subjects = {
         'OUTROS': {}
     }
 
+    if((document.getElementsByClassName("ui-mini").length) <= 1) { // CONTEXT MODAL "FIX"
+        return false;
+    }
+
     let currendHead = "";
 
-    document.querySelectorAll('ul')[1].querySelectorAll('li').forEach(
+    const ul = document.querySelectorAll('ul')[1] ?? null
+    
+    if(!ul) return false;
+
+    ul.querySelectorAll('li').forEach(
         (data) => {
             if(data.getAttribute("data-role")) {
                 currendHead = formatName(data.innerHTML);
