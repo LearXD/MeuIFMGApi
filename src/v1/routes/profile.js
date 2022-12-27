@@ -31,7 +31,9 @@ api.get('/', middleware, async (req, res, next) => {
         const htmlDocument = parse(response.data)
 
         const image = htmlDocument.querySelector('.profile_foto')?._attrs.src || false
-        const name = htmlDocument.querySelector('.profile_info').querySelector('strong').childNodes[0]._rawText.trim() || "Nome não Encontrado"
+        const name = htmlDocument.querySelector('.profile_info').querySelector('strong').childNodes[0]._rawText.trim().replace(/&#(\d*);/g, (match, number) => 
+            String.fromCharCode(number)
+        ) || "Nome não Encontrado"
 
         res.send({name, image})
     } catch (error) {
