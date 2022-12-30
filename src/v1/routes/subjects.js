@@ -1,6 +1,6 @@
 import axios from 'axios'
 import express from 'express'
-import HttpError, { BAD_REQUEST, CONFLICT, INTERNAL_SERVER_ERROR } from '../../HttpError.js';
+import HttpError, { BAD_REQUEST, CONFLICT, INTERNAL_SERVER_ERROR, UNAUTHORIZED } from '../../HttpError.js';
 import { extractSubjects } from '../utils/HtmlParser.js';
 
 import middleware from '../middleware/TokenManager.js';
@@ -20,6 +20,10 @@ api.get('/', middleware, async (req, res, next) => {
             method: 'get',
             headers: { cookie: token }
         })
+
+        if(response.request.socket._httpMessage.path && response.request.socket._httpMessage.path.startsWith("/EducaMobile/Account/Login")) {
+            return next(new HttpError("O Token fornecido é inválido ou já expirado!", UNAUTHORIZED))
+        }
     
         const data = extractSubjects(response.data, token);
         if(!data) {

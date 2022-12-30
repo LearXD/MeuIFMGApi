@@ -14,23 +14,38 @@ export const extractAssessments = (html) => {
     let index = -1;
     ul.querySelectorAll('li').forEach((child) => {
 
-        if (child.getAttribute('data-role') === 'list-divider') {
+        if(child.getAttribute('data-role') === 'list-divider') {
             index++;
-            data.push({ role: child.innerHTML.trim(), data: [] })
+            data.push({role: child.innerHTML.trim(), activities: []})
             return;
         }
 
-        if (index < 0) return
+        if(index < 0) return
 
         const split = child.innerHTML.split('\n');
         const spans = child.querySelectorAll('span')
 
-        data[index].data.push({
-            name: split[1].trim(),
-            note: spans[0].innerHTML.trim(),
-            value: spans[1].innerHTML.replace(/[^\d,]+/gm, '')
-        })
+        let name = split[1].trim(),
+            note = "",
+            value = "",
+            date = undefined;
 
+        switch (split.length) {
+            case 11:
+                date = spans[0].innerHTML.replace(/[^\d/]/g, '').trim()
+                note = spans[1].innerHTML.trim()
+                value = spans[2].innerHTML.replace(/[^\d,]+/gm, '')
+                break;
+            default: 
+                note = spans[0].innerHTML.trim()
+                value = spans[1].innerHTML.replace(/[^\d,]+/gm, '')
+                break;
+        }
+        
+        data[index].activities.push({
+            name, date, note, value
+        })
+       
     })
 
     return data;

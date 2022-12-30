@@ -1,5 +1,5 @@
 import express from 'express'
-import HttpError, { BAD_REQUEST, CONFLICT, INTERNAL_SERVER_ERROR } from '../../HttpError.js';
+import HttpError, { BAD_REQUEST, CONFLICT, INTERNAL_SERVER_ERROR, UNAUTHORIZED } from '../../HttpError.js';
 import { extractAssessments } from '../utils/HtmlParser.js';
 
 import middleware from '../middleware/TokenManager.js';
@@ -24,6 +24,11 @@ api.get('/', middleware, async (req, res, next) => {
             "body": "ddlTurmaDisc=" + id,
             "method": "POST"
         })
+
+        if(response.redirected) {
+            return next(new HttpError("O Token fornecido é inválido ou já expirado!", UNAUTHORIZED))
+        }
+        
     
         const data = extractAssessments(await response.text(), token);
 
