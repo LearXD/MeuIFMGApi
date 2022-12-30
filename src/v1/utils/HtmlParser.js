@@ -76,34 +76,37 @@ export const extractHistoric = (html) => {
 
     const document = extractDOMFromHtml(html);
 
-    let subjects = {
-        'OUTROS': {}
-    }
-
     if ((document.getElementsByClassName("ui-mini").length) <= 1) { // CONTEXT MODAL "FIX"
         return false;
     }
 
-    let currendHead = "";
-
     const ul = document.querySelectorAll('ul')[1] ?? null
-
     if (!ul) return false;
+
+    let subjects = []
+    let current = -1;
 
     ul.querySelectorAll('li').forEach(
         (data) => {
+
             if (data.getAttribute("data-role")) {
-                currendHead = formatName(data.innerHTML);
-                subjects[currendHead] = {}
+                current = subjects.length;
+                subjects.push({period: formatName(data.innerHTML), subjects: []})
                 return;
             }
-            if (!data.querySelector("h2") || !data.querySelector('p')) return;
+
+            if (current < 0 || !data.querySelector("h2") || !data.querySelector('p')) return;
 
             const subjectName = data.querySelector("h2").innerHTML.replace(/<[^>]*>/, '').trim();
-
             if (subjectName.includes('&nbsp;')) return;
 
-            // TRANSFORMANDO UM GRANDE innerHTML EM UM ARRAY COM STRINGS
+            let index = subjects[current].subjects.length
+
+            subjects[current].subjects.push({
+                name: subjectName,
+                data: {}
+            })
+
             const subjectData = removeHTML(data.querySelector('p').innerHTML)
                 .split("\n")
                 .map(
@@ -113,14 +116,16 @@ export const extractHistoric = (html) => {
                 )
                 .filter(k => !k.includes('Conceito') && k)
 
-            // TRANSFORMANDO UM ARRAY COM STRINGS EM DADOS
+
             subjectData.forEach(sData => {
                 const [key, value] = sData.split(": ");
+
                 const newObj = {}
                 newObj[key] = value;
-                subjects[currendHead || 'OUTROS'][subjectName] = {
-                    ...newObj,
-                    ...subjects[currendHead || 'OUTROS'][subjectName]
+
+                subjects[current].subjects[index].data = {
+                    ...subjects[current].subjects[index].data,
+                    ...newObj
                 }
             })
         }
