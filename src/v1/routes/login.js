@@ -72,6 +72,7 @@ api.post('/', async (req, res, next) => {
         })
 
     } catch (error) {
+        console.error(error)
         next(new HttpError("Erro interno: " + error, INTERNAL_SERVER_ERROR))
     }
 })

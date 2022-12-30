@@ -37,6 +37,7 @@ api.get('/', middleware, async (req, res, next) => {
 
         res.send({name, image})
     } catch (error) {
+        console.error(error)
         next(new HttpError("Erro interno: " + error, INTERNAL_SERVER_ERROR))
     }
 

@@ -4,17 +4,12 @@ import axios from 'axios'
 import HttpError, { BAD_REQUEST, CONFLICT, INTERNAL_SERVER_ERROR, UNAUTHORIZED } from '../../HttpError.js';
 
 import middleware from '../middleware/TokenManager.js';
-import { extractDataFromHtml } from '../utils/SubjectsParse.js';
-import { cookiesToString, tokenToCookies } from '../utils/CookieManager.js';
+import { extractHistoric } from '../utils/HtmlParser.js';
 
 const api = express();
 
 api.get('/', middleware, async (req, res, next) => {
     let { token } = req.headers;
-
-    let tokens = tokenToCookies(token)
-    tokens['RedirectUrlContexto'] = 'https://meu.ifmg.edu.br:443/EducaMobile/Educacional/EduAluno/EduNotasAvaliacao?tp=A'
-    token = cookiesToString(tokens);
 
     try {
         const { SERVER_HOST, SERVER_HISTORIC_ROUTE } = process.env
@@ -31,14 +26,14 @@ api.get('/', middleware, async (req, res, next) => {
             return next(new HttpError("O Token fornecido é inválido ou já expirado!", UNAUTHORIZED))
         }
 
-        const data = extractDataFromHtml(response.data, token);
+        const data = extractHistoric(response.data, token);
         if(!data) {
             return next(new HttpError(`Credenciais de usuário não definido, acesse sua conta em ${SERVER_HOST}, depois clique em "Histórico" e selecione um ano letivo. Não se esqueça de marcar a caixa de salvar período letivo!`, CONFLICT))
         }
 
         res.status(200).send(data)
     } catch (error) {
-        console.log(error)
+        console.error(error)
         next(new HttpError("Erro interno: " + error, INTERNAL_SERVER_ERROR))
     }
 })
