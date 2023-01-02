@@ -11,6 +11,10 @@ api.get('/', middleware, async (req, res, next) => {
     const { id } = req.query;
     const { token } = req.headers;
 
+    if(!id) {
+        return next(new HttpError("Parâmetro `id` não definido!", BAD_REQUEST))
+    }
+
     try {
 
         const { SERVER_HOST } = process.env

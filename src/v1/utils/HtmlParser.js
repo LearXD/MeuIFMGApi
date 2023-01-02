@@ -6,6 +6,11 @@ export const extractDOMFromHtml = (html) => {
 
 export const extractAssessments = (html) => {
     const document = extractDOMFromHtml(html);
+
+    if ((document.getElementsByClassName("ui-mini").length) <= 1) { // CONTEXT MODAL "FIX"
+        return false;
+    }
+    
     const ul = document.querySelector('ul');
 
     if(!ul) return [];
@@ -53,6 +58,10 @@ export const extractAssessments = (html) => {
 
 export const extractSubjects = (html) => {
     const document = extractDOMFromHtml(html);
+
+    if ((document.getElementsByClassName("ui-mini").length) <= 1) { // CONTEXT MODAL "FIX"
+        return false;
+    }
 
     const subjects = [];
 
