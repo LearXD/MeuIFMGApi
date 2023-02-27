@@ -11,15 +11,16 @@ export default (options) => {
 
     const SERVER_PORT = options.port || 3000
 
-    console.log(">> Inciando a API...");
+    console.log("[API] Inciando a API...");
     const api = express();
 
+    console.log("[API] Registrando Middlewares")
     api.use(bodyParser.urlencoded({ extended: false }));
     api.use(bodyParser.json());
 
     api.use(morgan('dev'));
 
-    console.log(">>> Registrando V1")
+    console.log("[API] Registrando Rotas")
     api.use('/v1', version1);
 
     api.get('/status', (req, res) => {
@@ -30,7 +31,7 @@ export default (options) => {
         next(new Error())
     })
 
-    // PARA ERROS
+    console.log("[API] Registrando Middlewares de Erro")
     api.use((error, req, res, next) => {
         if(!error) {
             error = new Error()
@@ -44,15 +45,16 @@ export default (options) => {
     })
 
 
+    console.log("[SERVER] Iniciando Servidor")
     const server = http.createServer(api);
     server.listen(SERVER_PORT)
 
     server.on('listening', () => {
-        console.log(">> Servidor escutando na porta " + SERVER_PORT + "...")
+        console.log("[SERVER] Servidor escutando na porta " + SERVER_PORT + "...")
     })
 
     server.on('error', (error) => {
-        console.log(">> Server Error: " + error)
+        console.log("[SERVER] Server Error: " + error)
     })
 
     return;

@@ -1,14 +1,9 @@
-import api from './api.js';
+import start from './api.js';
+import { getConfig } from './Utils.js';
 
 (async () => {
-
     (await import('dotenv')).config();
-    console.log("Iniciando....");
-
-    const configuration = {
-        port: 3001
-    }
-    
-    api(configuration);
-    
+    console.log("[THREAD] Iniciando....");
+    const config = getConfig();
+    start({ port: config.PORT });
 })()

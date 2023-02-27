@@ -31,24 +31,24 @@ export const extractAssessments = (html) => {
         const spans = child.querySelectorAll('span')
 
         let name = split[1].trim(),
-            note = "",
+            grade = "",
             value = "",
             date = undefined;
 
         switch (split.length) {
             case 11:
                 date = spans[0].innerHTML.replace(/[^\d/]/g, '').trim()
-                note = spans[1].innerHTML.trim()
+                grade = spans[1].innerHTML.trim()
                 value = spans[2].innerHTML.replace(/[^\d,]+/gm, '')
                 break;
             default: 
-                note = spans[0].innerHTML.trim()
+                grade = spans[0].innerHTML.trim()
                 value = spans[1].innerHTML.replace(/[^\d,]+/gm, '')
                 break;
         }
         
         data[index].activities.push({
-            name, date, note, value
+            name, date, grade, value
         })
        
     })
@@ -141,6 +141,24 @@ export const extractHistoric = (html) => {
     )
 
     return subjects;
+}
+
+
+export const extractWarnings = (html) => {
+
+    const document = extractDOMFromHtml(html);
+
+    const data = [];
+    document.querySelectorAll("ul")[0].querySelectorAll('li:not([data-role="list-divider"])').forEach((element) => {
+        data.push({
+            subject: element.querySelector('h3').innerHTML,
+            room: element.querySelectorAll('p')[0].innerHTML,
+            situation: element.querySelectorAll('p')[1].innerHTML,
+            absences: element.querySelector('span').innerHTML
+        })
+    })
+
+    return data;
 }
 
 export const formatName = (string) => {
