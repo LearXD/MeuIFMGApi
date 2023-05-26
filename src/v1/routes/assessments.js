@@ -11,7 +11,7 @@ api.get('/', middleware, async (req, res, next) => {
     const { id } = req.query;
     const { token } = req.headers;
 
-    if(!id) {
+    if (!id) {
         return next(new HttpError("Parâmetro `id` não definido!", BAD_REQUEST))
     }
 
@@ -29,23 +29,22 @@ api.get('/', middleware, async (req, res, next) => {
             "method": "POST"
         })
 
-        if(response.redirected) {
+        if (response.redirected) {
             return next(new HttpError("O Token fornecido é inválido ou já expirado!", UNAUTHORIZED))
         }
-        
-    
+
         const data = extractAssessments(await response.text(), token);
 
-        if(!data) {
+        if (!data) {
             return next(new HttpError(`Credenciais de usuário não definido, acesse sua conta em ${SERVER_HOST}, depois clique em "Histórico" e selecione um ano letivo. Não se esqueça de marcar a caixa de salvar período letivo!`, CONFLICT))
         }
 
         return res.status(200).send(data)
-    } catch(error) {
+    } catch (error) {
         console.error(error)
         next(new HttpError("Erro interno: " + error, INTERNAL_SERVER_ERROR))
     }
-    
+
 
 })
 

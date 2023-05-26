@@ -21,7 +21,7 @@ api.get('/', middleware, async (req, res, next) => {
             headers: { cookie: token }
         })
 
-        if (response.request.socket._httpMessage.path && response.request.socket._httpMessage.path.startsWith("/EducaMobile/Account/Login")) {
+        if (response.request.path.startsWith("/EducaMobile/Account/Login")) {
             return next(new HttpError("O Token fornecido é inválido ou já expirado!", UNAUTHORIZED))
         }
 

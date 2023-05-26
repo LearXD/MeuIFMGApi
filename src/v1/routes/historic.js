@@ -21,13 +21,12 @@ api.get('/', middleware, async (req, res, next) => {
             validateStatus: (status) => (status >= 200 && status < 303),
         })
 
-        // VALIDAR SESSÃO
-        if(response.request.socket._httpMessage.path && response.request.socket._httpMessage.path.startsWith("/EducaMobile/Account/Login")) {
+        if (response.request.path.startsWith("/EducaMobile/Account/Login")) {
             return next(new HttpError("O Token fornecido é inválido ou já expirado!", UNAUTHORIZED))
         }
 
         const data = extractHistoric(response.data, token);
-        if(!data) {
+        if (!data) {
             return next(new HttpError(`Credenciais de usuário não definido, acesse sua conta em ${SERVER_HOST}, depois clique em "Histórico" e selecione um ano letivo. Não se esqueça de marcar a caixa de salvar período letivo!`, CONFLICT))
         }
 

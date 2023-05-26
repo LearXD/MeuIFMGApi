@@ -24,24 +24,26 @@ api.get('/', middleware, async (req, res, next) => {
             validateStatus: (status) => (status >= 200 && status < 303),
         })
 
-        if(response.request.socket._httpMessage.path.startsWith("/EducaMobile/Account/Login")) {
+
+        if (response.request.path.startsWith("/EducaMobile/Account/Login")) {
             return next(new HttpError("O Token fornecido é inválido ou já expirado!", UNAUTHORIZED))
         }
-    
+
+
         const htmlDocument = parse(response.data)
 
         const image = htmlDocument.querySelector('.profile_foto')?._attrs.src || false
-        const name = htmlDocument.querySelector('.profile_info').querySelector('strong').childNodes[0]._rawText.trim().replace(/&#(\d*);/g, (match, number) => 
+        const name = htmlDocument.querySelector('.profile_info').querySelector('strong').childNodes[0]._rawText.trim().replace(/&#(\d*);/g, (match, number) =>
             String.fromCharCode(number)
         ) || "Nome não Encontrado"
 
-        res.send({name, image})
+        res.send({ name, image })
     } catch (error) {
         console.error(error)
         next(new HttpError("Erro interno: " + error, INTERNAL_SERVER_ERROR))
     }
 
-}) 
+})
 
 api.use((req, res, next) => {
     const error = new HttpError("Por favor, use o metodo GET!", BAD_REQUEST)

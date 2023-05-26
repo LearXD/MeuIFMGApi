@@ -10,22 +10,22 @@ export const extractAssessments = (html) => {
     if ((document.getElementsByClassName("ui-mini").length) <= 1) { // CONTEXT MODAL "FIX"
         return false;
     }
-    
+
     const ul = document.querySelector('ul');
 
-    if(!ul) return [];
+    if (!ul) return [];
 
     const data = [];
     let index = -1;
     ul.querySelectorAll('li').forEach((child) => {
 
-        if(child.getAttribute('data-role') === 'list-divider') {
+        if (child.getAttribute('data-role') === 'list-divider') {
             index++;
-            data.push({role: child.innerHTML.trim(), activities: []})
+            data.push({ role: child.innerHTML.trim(), activities: [] })
             return;
         }
 
-        if(index < 0) return
+        if (index < 0) return
 
         const split = child.innerHTML.split('\n');
         const spans = child.querySelectorAll('span')
@@ -41,16 +41,16 @@ export const extractAssessments = (html) => {
                 grade = spans[1].innerHTML.trim()
                 value = spans[2].innerHTML.replace(/[^\d,]+/gm, '')
                 break;
-            default: 
+            default:
                 grade = spans[0].innerHTML.trim()
                 value = spans[1].innerHTML.replace(/[^\d,]+/gm, '')
                 break;
         }
-        
+
         data[index].activities.push({
             name, date, grade, value
         })
-       
+
     })
 
     return data;
@@ -100,7 +100,7 @@ export const extractHistoric = (html) => {
 
             if (data.getAttribute("data-role")) {
                 current = subjects.length;
-                subjects.push({period: formatName(data.innerHTML), subjects: []})
+                subjects.push({ period: formatName(data.innerHTML), subjects: [] })
                 return;
             }
 
