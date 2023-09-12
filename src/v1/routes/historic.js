@@ -10,22 +10,27 @@ const api = express();
 
 api.get('/', middleware, async (req, res, next) => {
     let { token } = req.headers;
+    console.log(token)
 
     try {
         const { SERVER_HOST, SERVER_HISTORIC_ROUTE } = process.env
 
-        const response = await axios({
-            url: SERVER_HOST + SERVER_HISTORIC_ROUTE,
-            method: 'GET',
-            headers: { cookie: token },
-            validateStatus: (status) => (status >= 200 && status < 303),
-        })
+        const response = await fetch(
+            SERVER_HOST + SERVER_HISTORIC_ROUTE,
+            {
+                method: 'GET',
+                headers: {
+                    cookie: token,
+                    "Referer": "https://meu.ifmg.edu.br/EducaMobile/Educacional/EduAluno/EduNotasAvaliacao",
+                    "Referrer-Policy": "strict-origin-when-cross-origin"
+                },
+            })
 
-        if (response.request.path.startsWith("/EducaMobile/Account/Login")) {
+        if (response.redirected) {
             return next(new HttpError("O Token fornecido é inválido ou já expirado!", UNAUTHORIZED))
         }
 
-        const data = extractHistoric(response.data, token);
+        const data = extractHistoric(await response.text());
         if (!data) {
             return next(new HttpError(`Credenciais de usuário não definido, acesse sua conta em ${SERVER_HOST}, depois clique em "Histórico" e selecione um ano letivo. Não se esqueça de marcar a caixa de salvar período letivo!`, CONFLICT))
         }

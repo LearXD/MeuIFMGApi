@@ -18,7 +18,11 @@ api.get('/', middleware, async (req, res, next) => {
         const response = await axios({
             url: SERVER_HOST + SERVER_WARNINGS_ROUTE,
             method: 'get',
-            headers: { cookie: token }
+            headers: {
+                cookie: token,
+                "Referer": "https://meu.ifmg.edu.br/EducaMobile/Educacional/EduAluno/EduNotasAvaliacao",
+                "Referrer-Policy": "strict-origin-when-cross-origin"
+            }
         })
 
         if (response.request.path.startsWith("/EducaMobile/Account/Login")) {

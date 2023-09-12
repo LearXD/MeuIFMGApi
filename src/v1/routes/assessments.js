@@ -24,6 +24,8 @@ api.get('/', middleware, async (req, res, next) => {
             "headers": {
                 "content-type": "application/x-www-form-urlencoded",
                 "cookie": token,
+                "Referer": "https://meu.ifmg.edu.br/EducaMobile/Educacional/EduAluno/EduNotasAvaliacao",
+                "Referrer-Policy": "strict-origin-when-cross-origin"
             },
             "body": "ddlTurmaDisc=" + id,
             "method": "POST"
