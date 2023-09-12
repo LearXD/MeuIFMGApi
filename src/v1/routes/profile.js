@@ -4,6 +4,7 @@ import express from "express";
 import { parse } from 'node-html-parser';
 import HttpError, { BAD_REQUEST, INTERNAL_SERVER_ERROR, UNAUTHORIZED } from "../../HttpError.js";
 import middleware from '../middleware/TokenManager.js';
+import fs from 'fs';
 
 const api = express();
 
@@ -15,7 +16,7 @@ api.get('/', middleware, async (req, res, next) => {
         res.send(
             {
                 name: "Test User",
-                image: "https://cdn.wccftech.com/wp-content/uploads/2022/07/current-google-play-icon-1030x1030.webp"
+                image: fs.readFileSync('./src/assets/play-store/image.txt', 'utf-8')
             }
         );
         return;
