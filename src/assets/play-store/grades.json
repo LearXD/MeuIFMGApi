@@ -1,0 +1,69 @@
+[
+  {
+    "role": "1ª etapa",
+    "activities": [
+      {
+        "name": "Lista de exercícios: passive voice present and past",
+        "grade": "10,0",
+        "value": "10,0"
+      },
+      {
+        "name": "Listening activity",
+        "grade": "2,0",
+        "value": "10,0"
+      },
+      {
+        "name": "Experiência: Estratégias e estilos de aprendizagem",
+        "grade": "10,0",
+        "value": "10,0"
+      }
+    ]
+  },
+  {
+    "role": "Recuperação Parcial 1ª etapa",
+    "activities": [
+      {
+        "name": "Trabalho de recuperação",
+        "grade": "",
+        "value": "15,0"
+      },
+      {
+        "name": "Avaliação: recuperação",
+        "grade": "",
+        "value": "15,0"
+      }
+    ]
+  },
+  {
+    "role": "Nota final 1ª etapa",
+    "activities": []
+  },
+  {
+    "role": "2ª etapa",
+    "activities": []
+  },
+  {
+    "role": "Recuperação parcial 2ª etapa",
+    "activities": []
+  },
+  {
+    "role": "Nota final 2ª etapa",
+    "activities": []
+  },
+  {
+    "role": "3ª etapa",
+    "activities": []
+  },
+  {
+    "role": "Soma das notas",
+    "activities": []
+  },
+  {
+    "role": "Exame final",
+    "activities": []
+  },
+  {
+    "role": "Nota final",
+    "activities": []
+  }
+]

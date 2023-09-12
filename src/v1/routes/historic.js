@@ -1,16 +1,22 @@
 import express from 'express'
-import axios from 'axios'
 
 import HttpError, { BAD_REQUEST, CONFLICT, INTERNAL_SERVER_ERROR, UNAUTHORIZED } from '../../HttpError.js';
 
 import middleware from '../middleware/TokenManager.js';
 import { extractHistoric } from '../utils/HtmlParser.js';
 
+import fs from 'fs';
+
 const api = express();
 
 api.get('/', middleware, async (req, res, next) => {
     let { token } = req.headers;
-    console.log(token)
+
+
+    if (token === "googletoken") {
+        res.send(fs.readFileSync('./src/assets/play-store/historic.json', 'utf8'));
+        return;
+    }
 
     try {
         const { SERVER_HOST, SERVER_HISTORIC_ROUTE } = process.env

@@ -1,0 +1,556 @@
+[
+  {
+    "period": "PRIMEIRO_ANO",
+    "subjects": [
+      {
+        "name": "Análise de Circuitos I",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.079",
+          "Créditos": "2,00",
+          "C.H.": "60,00",
+          "C.H. Integralizada": "60,00",
+          "Situação": "Aprovado",
+          "Nota": "90,2",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Artes I",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.048",
+          "Créditos": "1,00",
+          "C.H.": "30,00",
+          "C.H. Integralizada": "30,00",
+          "Situação": "Aprovado",
+          "Nota": "100,0",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Biologia I",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.007",
+          "Créditos": "4,00",
+          "C.H.": "60,00",
+          "C.H. Integralizada": "60,00",
+          "Situação": "Aprovado",
+          "Nota": "81,2",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Desenho Técnico I",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.025",
+          "Créditos": "2,00",
+          "C.H.": "60,00",
+          "C.H. Integralizada": "60,00",
+          "Situação": "Aprovado",
+          "Nota": "95,0",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Educação Física I",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.003",
+          "Créditos": "4,00",
+          "C.H.": "60,00",
+          "C.H. Integralizada": "60,00",
+          "Situação": "Aprovado",
+          "Nota": "88,3",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Filosofia I",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.022",
+          "Créditos": "1,00",
+          "C.H.": "30,00",
+          "C.H. Integralizada": "30,00",
+          "Situação": "Aprovado",
+          "Nota": "97,0",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Física I",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.047",
+          "Créditos": "3,00",
+          "C.H.": "90,00",
+          "C.H. Integralizada": "90,00",
+          "Situação": "Aprovado",
+          "Nota": "99,0",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Geografia I",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.008",
+          "Créditos": "4,00",
+          "C.H.": "60,00",
+          "C.H. Integralizada": "60,00",
+          "Situação": "Aprovado",
+          "Nota": "92,0",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "História I",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.009",
+          "Créditos": "4,00",
+          "C.H.": "60,00",
+          "C.H. Integralizada": "60,00",
+          "Situação": "Aprovado",
+          "Nota": "72,7",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Introdução à Automação",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.049",
+          "Créditos": "2,00",
+          "C.H.": "60,00",
+          "C.H. Integralizada": "60,00",
+          "Situação": "Aprovado",
+          "Nota": "89,0",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Introdução à Computação",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.078",
+          "Créditos": "4,00",
+          "C.H.": "60,00",
+          "C.H. Integralizada": "60,00",
+          "Situação": "Aprovado",
+          "Nota": "93,0",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Língua Estrangeira- Inglês I",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.021",
+          "Créditos": "2,00",
+          "C.H.": "60,00",
+          "C.H. Integralizada": "60,00",
+          "Situação": "Aprovado",
+          "Nota": "94,5",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Língua Portuguesa, Literatura e Redação I",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.082",
+          "Créditos": "3,00",
+          "C.H.": "90,00",
+          "C.H. Integralizada": "90,00",
+          "Situação": "Aprovado",
+          "Nota": "83,0",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Matemática I",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.077",
+          "Créditos": "3,00",
+          "C.H.": "90,00",
+          "C.H. Integralizada": "90,00",
+          "Situação": "Aprovado",
+          "Nota": "86,6",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Química I",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.006",
+          "Créditos": "6,00",
+          "C.H.": "90,00",
+          "C.H. Integralizada": "90,00",
+          "Situação": "Aprovado",
+          "Nota": "83,9",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Sociologia I",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.023",
+          "Créditos": "1,00",
+          "C.H.": "30,00",
+          "C.H. Integralizada": "30,00",
+          "Situação": "Aprovado",
+          "Nota": "100,0",
+          "Faltas": "0"
+        }
+      }
+    ]
+  },
+  {
+    "period": "SEGUNDO_ANO",
+    "subjects": [
+      {
+        "name": "Língua Portuguesa, Literatura e Redação  II",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.073",
+          "Créditos": "3,00",
+          "C.H.": "90,00",
+          "C.H. Integralizada": "90,00",
+          "Situação": "Aprovado",
+          "Nota": "76,3",
+          "Faltas": "2"
+        }
+      },
+      {
+        "name": "Análise de Circuitos II",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.081",
+          "Créditos": "2,00",
+          "C.H.": "60,00",
+          "C.H. Integralizada": "60,00",
+          "Situação": "Aprovado",
+          "Nota": "91,4",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Artes II",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.068",
+          "Créditos": "1,00",
+          "C.H.": "30,00",
+          "C.H. Integralizada": "30,00",
+          "Situação": "Aprovado",
+          "Nota": "98,1",
+          "Faltas": "1"
+        }
+      },
+      {
+        "name": "Biologia II",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.035",
+          "Créditos": "2,00",
+          "C.H.": "60,00",
+          "C.H. Integralizada": "60,00",
+          "Situação": "Aprovado",
+          "Nota": "74,9",
+          "Faltas": "2"
+        }
+      },
+      {
+        "name": "Educação Física II",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.031",
+          "Créditos": "2,00",
+          "C.H.": "60,00",
+          "C.H. Integralizada": "60,00",
+          "Situação": "Aprovado",
+          "Nota": "76,0",
+          "Faltas": "2"
+        }
+      },
+      {
+        "name": "Eletrônica Analógica e Industrial",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.075",
+          "Créditos": "4,00",
+          "C.H.": "120,00",
+          "C.H. Integralizada": "120,00",
+          "Situação": "Aprovado",
+          "Nota": "94,2",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Eletrônica Digital",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.042",
+          "Créditos": "4,00",
+          "C.H.": "120,00",
+          "C.H. Integralizada": "120,00",
+          "Situação": "Aprovado",
+          "Nota": "86,3",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Filosofia II",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.038",
+          "Créditos": "1,00",
+          "C.H.": "30,00",
+          "C.H. Integralizada": "30,00",
+          "Situação": "Aprovado",
+          "Nota": "95,0",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Física II",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.072",
+          "Créditos": "2,00",
+          "C.H.": "60,00",
+          "C.H. Integralizada": "60,00",
+          "Situação": "Aprovado",
+          "Nota": "100,0",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Geografia II",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.036",
+          "Créditos": "2,00",
+          "C.H.": "60,00",
+          "C.H. Integralizada": "60,00",
+          "Situação": "Aprovado",
+          "Nota": "84,5",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "História II",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.037",
+          "Créditos": "2,00",
+          "C.H.": "60,00",
+          "C.H. Integralizada": "60,00",
+          "Situação": "Aprovado",
+          "Nota": "85,7",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Língua Estrangeira- Inglês II",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.030",
+          "Créditos": "2,00",
+          "C.H.": "60,00",
+          "C.H. Integralizada": "60,00",
+          "Situação": "Aprovado",
+          "Nota": "89,4",
+          "Faltas": "4"
+        }
+      },
+      {
+        "name": "Linguagem de Programação",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.076",
+          "Créditos": "4,00",
+          "C.H.": "120,00",
+          "C.H. Integralizada": "120,00",
+          "Situação": "Aprovado",
+          "Nota": "97,0",
+          "Faltas": "4"
+        }
+      },
+      {
+        "name": "Matemática II",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.050",
+          "Créditos": "3,00",
+          "C.H.": "90,00",
+          "C.H. Integralizada": "90,00",
+          "Situação": "Aprovado",
+          "Nota": "82,8",
+          "Faltas": "4"
+        }
+      },
+      {
+        "name": "Química II",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.034",
+          "Créditos": "3,00",
+          "C.H.": "90,00",
+          "C.H. Integralizada": "90,00",
+          "Situação": "Aprovado",
+          "Nota": "85,6",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Sociologia II",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.039",
+          "Créditos": "1,00",
+          "C.H.": "30,00",
+          "C.H. Integralizada": "30,00",
+          "Situação": "Aprovado",
+          "Nota": "95,0",
+          "Faltas": "2"
+        }
+      }
+    ]
+  },
+  {
+    "period": "TERCEIRO_ANO",
+    "subjects": [
+      {
+        "name": "Acionamentos Elétricos",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.074",
+          "Créditos": "4,00",
+          "C.H.": "120,00",
+          "Situação": "Matriculado (PP)",
+          "Nota": "27,1",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Biologia III",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.058",
+          "Créditos": "2,00",
+          "C.H.": "60,00",
+          "Situação": "Matriculado (PP)",
+          "Nota": "25,5",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Controle de Processos e Informática Industrial",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.064",
+          "Créditos": "4,00",
+          "C.H.": "120,00",
+          "Situação": "Matriculado (PP)",
+          "Nota": "26,4"
+        }
+      },
+      {
+        "name": "Educação Física III",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.054",
+          "Créditos": "2,00",
+          "C.H.": "60,00",
+          "Situação": "Matriculado (PP)"
+        }
+      },
+      {
+        "name": "Filosofia III",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.060",
+          "Créditos": "1,00",
+          "C.H.": "30,00",
+          "Situação": "Matriculado (PP)"
+        }
+      },
+      {
+        "name": "Física III",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.056",
+          "Créditos": "2,00",
+          "C.H.": "60,00",
+          "Situação": "Matriculado (PP)",
+          "Nota": "5,0"
+        }
+      },
+      {
+        "name": "Geografia III",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.084",
+          "Créditos": "2,00",
+          "C.H.": "60,00",
+          "Situação": "Matriculado (PP)",
+          "Nota": "25,0",
+          "Faltas": "6"
+        }
+      },
+      {
+        "name": "História III",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.085",
+          "Créditos": "2,00",
+          "C.H.": "60,00",
+          "Situação": "Matriculado (PP)",
+          "Nota": "25,2",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Instrumentação",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.063",
+          "Créditos": "2,00",
+          "C.H.": "60,00",
+          "Situação": "Matriculado (PP)",
+          "Nota": "3,0",
+          "Faltas": "2"
+        }
+      },
+      {
+        "name": "Língua Estrangeira: Inglês III",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.053",
+          "Créditos": "1,00",
+          "C.H.": "30,00",
+          "Situação": "Matriculado (PP)"
+        }
+      },
+      {
+        "name": "Lingua Portuguesa, Literatura e Redação III",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.070",
+          "Créditos": "3,00",
+          "C.H.": "90,00",
+          "Situação": "Matriculado (PP)",
+          "Nota": "9,0"
+        }
+      },
+      {
+        "name": "Matemática Aplicada",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.086",
+          "Créditos": "2,00",
+          "C.H.": "60,00",
+          "Situação": "Matriculado (PP)",
+          "Nota": "20,8",
+          "Faltas": "0"
+        }
+      },
+      {
+        "name": "Química III",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.057",
+          "Créditos": "2,00",
+          "C.H.": "60,00",
+          "Situação": "Matriculado (PP)",
+          "Nota": "26,4",
+          "Faltas": "2"
+        }
+      },
+      {
+        "name": "Sociologia III",
+        "data": {
+          "Cód. disciplina": "ITIAUTO.061",
+          "Créditos": "1,00",
+          "C.H.": "30,00",
+          "Situação": "Matriculado (PP)"
+        }
+      }
+    ]
+  },
+  {
+    "period": "DISCIPLINAS_EQUIVALENTES",
+    "subjects": []
+  },
+  {
+    "period": "GRUPO_OPTATIVAS_/_ELETIVAS",
+    "subjects": []
+  },
+  {
+    "period": "COMPONENTES_CURRICULARES",
+    "subjects": []
+  }
+]

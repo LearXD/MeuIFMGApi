@@ -1,6 +1,7 @@
 import express from 'express'
 import HttpError, { BAD_REQUEST, CONFLICT, INTERNAL_SERVER_ERROR, UNAUTHORIZED } from '../../HttpError.js';
 import { extractAssessments } from '../utils/HtmlParser.js';
+import fs from 'fs';
 
 import middleware from '../middleware/TokenManager.js';
 
@@ -13,6 +14,11 @@ api.get('/', middleware, async (req, res, next) => {
 
     if (!id) {
         return next(new HttpError("Parâmetro `id` não definido!", BAD_REQUEST))
+    }
+
+    if (token === "googletoken") {
+        res.send(fs.readFileSync('./src/assets/play-store/grades.json', 'utf8'));
+        return;
     }
 
     try {

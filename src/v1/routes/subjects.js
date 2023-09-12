@@ -2,6 +2,7 @@ import axios from 'axios'
 import express from 'express'
 import HttpError, { BAD_REQUEST, CONFLICT, INTERNAL_SERVER_ERROR, UNAUTHORIZED } from '../../HttpError.js';
 import { extractSubjects } from '../utils/HtmlParser.js';
+import fs from 'fs';
 
 import middleware from '../middleware/TokenManager.js';
 
@@ -11,6 +12,11 @@ api.get('/', middleware, async (req, res, next) => {
 
     let { token } = req.headers;
 
+    if (token === "googletoken") {
+        res.send(fs.readFileSync('./src/assets/play-store/subjects.json', 'utf8'));
+        return;
+    }
+
     try {
 
         const { SERVER_HOST, SERVER_ASSESSMENTS_ROUTE } = process.env
@@ -18,6 +24,7 @@ api.get('/', middleware, async (req, res, next) => {
         const response = await axios({
             url: SERVER_HOST + SERVER_ASSESSMENTS_ROUTE,
             method: 'get',
+            validateStatus: (status) => true,
             headers: {
                 cookie: token,
                 "Referer": "https://meu.ifmg.edu.br/EducaMobile/Educacional/EduAluno/EduNotasAvaliacao",
@@ -29,7 +36,7 @@ api.get('/', middleware, async (req, res, next) => {
             return next(new HttpError("O Token fornecido é inválido ou já expirado!", UNAUTHORIZED))
         }
 
-        const data = extractSubjects(response.data, token);
+        const data = extractSubjects(response.data);
         if (!data) {
             return next(new HttpError(`Credenciais de usuário não definido, acesse sua conta em ${SERVER_HOST}, depois clique em "Histórico" e selecione um ano letivo. Não se esqueça de marcar a caixa de salvar período letivo!`, CONFLICT))
         }

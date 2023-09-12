@@ -11,6 +11,16 @@ api.get('/', middleware, async (req, res, next) => {
 
     const { token } = req.headers;
 
+    if (token === "googletoken") {
+        res.send(
+            {
+                name: "Test User",
+                image: "https://cdn.wccftech.com/wp-content/uploads/2022/07/current-google-play-icon-1030x1030.webp"
+            }
+        );
+        return;
+    }
+
     try {
 
         const { SERVER_HOST, SERVER_MAIN_ROUTE } = process.env
