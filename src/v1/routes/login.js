@@ -67,8 +67,9 @@ api.post('/', async (req, res, next) => {
 
         const cookiesStr = cookiesToString(cookies)
 
-        axios({
-            url: SERVER_HOST + SERVER_HISTORIC_ROUTE,
+        await axios({
+            //url: SERVER_HOST + SERVER_HISTORIC_ROUTE,
+            url: 'https://meu.ifmg.edu.br/EducaMobile/Educacional/EduContexto/GetContextoAluno',
             method: 'get',
             headers: { cookie: cookiesStr },
         }).catch(err => { });
