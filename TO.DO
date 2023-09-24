@@ -1,0 +1,1 @@
+// ROUTE => https://meu.ifmg.edu.br/EducaMobile/Home/ReloadSesion (PASSAR APENAS O COOKIE)

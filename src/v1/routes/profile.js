@@ -15,8 +15,8 @@ api.get('/', middleware, async (req, res, next) => {
     if (token === "googletoken") {
         res.send(
             {
-                name: "Test User",
-                image: fs.readFileSync('./src/assets/play-store/image.txt', 'utf-8')
+                name: "Default User",
+                image: "data:image/png;base64," + fs.readFileSync('./src/assets/play-store/profile.webp', 'base64')
             }
         );
         return;
